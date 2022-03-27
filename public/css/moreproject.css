@@ -1,0 +1,356 @@
+*{ 
+    box-sizing: border-box; 
+    padding: 0;
+     margin: 0;}
+
+:root{
+    --color-h3: #64ffda;
+    --color-home:#0a192f;
+    --color-font-home:#a0acc7;
+
+
+}
+
+html{height: 100%;scroll-behavior: smooth;}
+
+
+.stop-scrolling{
+    height: 100%;
+    overflow: hidden !important;
+}
+
+.overlay{
+    display: none;
+}
+
+.humburger-menu{
+    position: relative;
+    z-index: 100;
+    height: 100%;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    display: none;
+}
+
+.bar{
+    position: relative;
+     width: 100%;
+     height: 2px;
+     background-color: var(--color-h3);
+     transition: .5s;
+     border-radius: 3px;
+}
+
+.bar::after , .bar::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-h3);
+}
+
+.bar::after{
+    transform: translateY(8px);
+}
+
+.bar::before{
+    transform: translateY(-8px);
+}
+
+nav.open .humburger-menu .bar {
+    background: transparent;
+}
+
+nav.open .humburger-menu .bar::before{
+    transform:translateY(0) rotate(-45deg);
+}
+
+nav.open  .humburger-menu .bar::after{
+    transform:translateY(0) rotate(45deg);
+}
+
+
+::-webkit-scrollbar{ width: 7px; background-color: var(--color-home)}
+
+::-webkit-scrollbar-thumb{background-color: var(--color-h3); border-radius: 6px; padding:0 0.5px;}
+
+.moreproject{
+background-color: var(--color-home);
+height: 100%;
+width: 100%;
+}
+
+.collapse .navbar-nav .nav-item .nav-link{margin-left:15px;color:#a0acc7; font-size: 13px; font-weight: 600; font-family:'DM Sans', sans-serif;}
+
+.collapse .navbar-nav .nav-item .nav-link span{color: var(--color-h3);font-family:'DM Sans', sans-serif; font-weight: 400;}
+
+.collapse .navbar-nav .nav-item .nav-link:hover{ border: 2px dashed #64ffda; color: #64ffda;}
+
+.moreproject .navbar{
+    width: 100% !important;
+    padding: 2rem 10px 0.5rem 10px;
+}
+
+.moreproject .logo-home{
+    width: 50px;
+    position: relative;
+    left: 0px;
+}
+
+.navbar .navbar-brand{
+    margin-right: 0 !important;
+}
+
+.archive{
+    width: 100%;
+    height: 100%;
+    padding-top: 6rem;
+    min-height: 700px;
+}
+
+.archive-name .name{
+    color: #ccd6f6;
+    font-family: 'poppins',sans-serif;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 1.1;
+    padding-left: 10px;
+}
+
+.archive-name .p-name{
+    font-family:'DM Mono', monospace;
+    color: var(--color-h3);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-left: 10px;
+
+
+}
+
+.list-table{
+    margin-top: 4rem;
+    height: 100%;
+}
+
+.list-table .table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+ .table thead th{
+   
+    border-bottom: 0px solid #dee2e6 !important;
+  
+}
+
+
+.table tbody:hover{
+    background-color: #112240;
+}
+
+.table tbody+tbody {
+    border-top: 0px solid #dee2e6;
+}
+
+.table  .year{
+    color: var(--color-h3);
+    font-family: 'DM Mono', monospace;
+    font-weight: 400;
+    font-size: 15px;
+  
+}
+
+.table  .title{
+    color:#ccd6f6;
+    font-family: 'poppins',sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+  
+}
+
+.table td span{
+    color:#ccd6f6;
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 0 4px;
+  
+}
+
+.table td i{
+    font-size: 20px;
+    color: var(--color-font-home);
+    margin-right: 4px;
+    transition: ease-in-out .8s all;
+    
+}
+
+.table td i:hover{
+ color: var(--color-h3);
+}
+
+
+
+       
+
+
+th{
+    color: var(--color-font-home);
+    font-size: 17px;
+    font-family: 'poppins',sans-serif;
+    border-top: 0px solid #dee2e6;
+    font-weight: 600;
+}
+
+.table th {
+    border-top: 0px solid #dee2e6 !important;
+
+}
+
+.table td{
+   border-top: 0px solid #dee2e6 !important;
+}
+.section{
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-home);
+    
+}
+
+.footer{
+    text-align: center;
+    height: 100%;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.footer-404{
+    font-size: 12px;
+    color: var(--color-font-home);
+    font-family: 'poppins',sans-serif;
+}
+
+.footer-404 span i{
+    font-size: 15px;
+    margin-top: .3rem;
+    cursor: pointer;
+}
+
+.footer-404 span a{
+    text-decoration: none;
+    color: var(--color-h3);
+    margin-right: 5px;
+
+}
+
+@media  (max-width:990px) {
+    .overlay{
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.7);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .ml-auto, .mx-auto {
+        margin-left:0!important;
+    }
+    .humburger-menu{
+        display: block;
+       
+
+    }
+
+
+    .navbar-nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-link{
+        margin-left: 0 !important;
+              padding: 2rem 0  !important;
+    }
+
+
+    nav{
+        overflow: hidden;
+
+    }
+
+    #navbarNav{
+        position: fixed;
+        top: 0;
+        right: 0;
+        max-width: 400px;
+        width: 100%;
+        height: 100%;
+        background: #00031b33;
+        backdrop-filter: blur(20px);
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: .5s;
+        overflow: hidden;
+
+    }
+
+    .navbar-nav{
+    background-color: transparent !important;
+    }
+
+    nav.open #navbarNav{
+        transform: translateX(0%);
+        box-shadow: 0px 0px 50px 2px rgba(0,0,0,0.4);
+    }
+
+
+    nav.open .overlay{
+      pointer-events: all;
+      opacity: .3;
+    
+    }
+
+    .padding{
+        padding-right: 0 !important;
+        width: 75px !important;
+    }
+}
+
+
+@media (max-width:600px){
+
+    #navbarNav{
+        max-width: 300px;
+    }
+
+    .archive-name .name{
+        font-size: 40px;
+        line-height: 1.1;
+    }
+
+    .archive-name .p-name{
+        font-size: 13px;
+    }
+
+    .hide-for-mobile{
+          display: none !important;
+    }
+
+}
